@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { addFavorite, removeFavorite } from '../services/favoriteService';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from '../styles/FavoriteComponent.module.css';
 
 const FavoriteComponent = ({ favorites, onSelectFavorite, onFavoritesChange }) => {
@@ -8,19 +10,30 @@ const FavoriteComponent = ({ favorites, onSelectFavorite, onFavoritesChange }) =
   const handleAddFavorite = async (e) => {
     e.preventDefault();
     if (newFavorite.trim()) {
-      await addFavorite(newFavorite.trim());
-      setNewFavorite('');
-      onFavoritesChange();
+      try {
+        await addFavorite(newFavorite.trim());
+        setNewFavorite('');
+        onFavoritesChange();
+        toast.success('City added to favorites!');
+      } catch (error) {
+        toast.error('Failed to add favorite.');
+      }
     }
   };
 
   const handleRemoveFavorite = async (id) => {
-    await removeFavorite(id);
-    onFavoritesChange();
+    try {
+      await removeFavorite(id);
+      onFavoritesChange();
+      toast.info('City removed from favorites.');
+    } catch (error) {
+      toast.error('Failed to remove favorite.');
+    }
   };
 
   return (
     <div className={styles.favoriteComponent}>
+      <ToastContainer />
       <h3 className={styles.title}>Favorite Cities</h3>
       <ul className={styles.favoriteList}>
         {favorites.map((favorite) => (
