@@ -1,0 +1,158 @@
+.favoriteComponent {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.title {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.favoriteList {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.favoriteItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.favoriteButton,
+.removeFavorite {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  min-width: 70px;
+  text-align: center;
+}
+
+.favoriteButton {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+}
+
+.favoriteButton:hover {
+  background-color: #27ae60;
+}
+
+.removeFavorite {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.removeFavorite:hover {
+  background-color: #c0392b;
+}
+
+.addFavoriteForm {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  gap: 5px;
+}
+
+.addFavoriteInput {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  min-width: 0;
+}
+
+.addFavoriteButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addFavoriteButton:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .favoriteComponent {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .favoriteItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .favoriteButton,
+  .removeFavorite {
+    font-size: 14px;
+    min-width: 100%;
+    margin-top: 5px;
+  }
+
+  .addFavoriteForm {
+    flex-direction: column;
+  }
+
+  .addFavoriteButton {
+    border-radius: 5px;
+    width: 100%;
+    padding: 8px;
+  }
+
+  .addFavoriteInput {
+    border-radius: 5px;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .favoriteComponent {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .favoriteButton,
+  .removeFavorite {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .addFavoriteInput {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .addFavoriteButton {
+    font-size: 14px;
+    padding: 8px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,76 @@
+.weatherDashboard {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: #2c3e50;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.loading, .error {
+  text-align: center;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.loading {
+  color: #3498db;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+  .weatherDashboard {
+      padding: 15px;
+  }
+
+  .title {
+      font-size: 20px;
+  }
+
+  .controls {
+      flex-direction: column;
+      gap: 10px;
+      align-items: stretch;
+  }
+
+  .loading, .error {
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .weatherDashboard {
+      padding: 10px;
+  }
+
+  .title {
+      font-size: 18px;
+  }
+
+  .controls {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .loading, .error {
+      font-size: 14px;
+      margin: 15px 0;
+  }
+}
